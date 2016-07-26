@@ -51,7 +51,7 @@ $q = $_REQUEST["q"];
     }
 } */
 
-
+/*
 $dir    = '/src/packages';
 $files1 = scandir($dir);
 $output=array();
@@ -63,12 +63,12 @@ foreach($files1 as &$i)
 	{
 		 $output[]=$i;
 	}
-}
-$outString="";
-foreach($output as $j)
-{
-	$outString.=$j."\n";
-}
+}*/
+//$outString="";
+//foreach($output as $j)
+//{
+//	$outString.=$j."\n";
+//}
 
 
 
@@ -76,5 +76,5 @@ foreach($output as $j)
 
 
 // Output "no suggestion" if no hint was found or output correct values 
-echo $outString === "" ? "no suggestion" : $outString;
+echo $a;
 ?>

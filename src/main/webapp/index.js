@@ -42,11 +42,11 @@ function xhrGet(url, callback, errback){
 	xhr.ontimeout = errback;
 	xhr.send();
 }
-/*function parseJson(str){
+function parseJson(str){
 	return window.JSON ? JSON.parse(str) : eval('(' + str + ')');
 }
 function prettyJson(str){
 	// If browser does not have JSON utilities, just print the raw string value.
 	return window.JSON ? JSON.stringify(JSON.parse(str), null, '  ') : str;
-}*/
+}
 

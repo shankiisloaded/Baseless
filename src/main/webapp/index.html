@@ -14852,13 +14852,22 @@ function ZeroPadNumber ( nValue )
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                 = xmlhttp.responseText;
+                 var myArr= JSON.parse(xmlhttp.responseText);
+                 myFunction(myArr);
             }
         };
         xmlhttp.open("GET", "gethint.php?q=" + str, true);
         xmlhttp.send();
     }
 } 
+function myFunction(arr) {
+    var out = "";
+    var i;
+    for(i = 0; i < arr.length; i++) {
+        out += arr[i] +"<br>"
+    }
+    document.getElementById("retrieveSegments").innerHTML = out;
+}
 </script>
 <style>
 /* * Copyright (c) 2012 Thibaut Courouble
@@ -15085,7 +15094,7 @@ input {
                 <form class="search" method="post"  >
 					<input type="text" class="form-control" name="q" placeholder="Package ID..." onkeyup="showHint(this.value)" />
 					<ul class="results" style="">
-						<li><a onclick="sendRequest()">Search Result #1</a></li>
+						<li><a onclick="">Search Result #1</a></li>
 						<li><a href="index.html">Search Result #2</a></li>
 						<li><a href="index.html">Search Result #3</a></li>
 						<li><a href="index.html">Search Result #4</a></li>
@@ -15093,7 +15102,7 @@ input {
 				</form>
 				
             </div>
-			<div id="retrieveSegments" style="display:none;">
+			<div id="retrieveSegments" style="">
 			
 			</div>
 			</div>
