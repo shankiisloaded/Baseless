@@ -20,8 +20,22 @@ public class SimpleServlet extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html");
-        response.getWriter().print("Hello World!");
+    	  try {
+        response.setContentType("application/json");
+        res.setCharacterEncoding("UTF-8");
+
+        PrintWriter out = res.getWriter();
+        File pdfFolder =  new File(req.getSession().getServletContext().getRealPath("/packages/30355"));
+
+        for (File pdf : pdfFolder.listFiles()) { // Line 27
+            out.println(pdf.getName());
+        }
+    } catch (IOException e) {
+        log.log(Level.SEVERE, e.getMessage());
+    
+    	
+    	
+  
     }
 
 }
