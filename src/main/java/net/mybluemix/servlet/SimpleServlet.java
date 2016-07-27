@@ -33,7 +33,7 @@ public class SimpleServlet extends HttpServlet {
             out.println(pdf.getName());
         }
     } catch (IOException e) {
-        log.log(Level.SEVERE, e.getMessage());
+        
     
     	
     	
