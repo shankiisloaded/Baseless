@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 /**
  * Servlet implementation class SimpleServlet
  */
@@ -22,10 +23,10 @@ public class SimpleServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	  try {
         response.setContentType("application/json");
-        res.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
 
-        PrintWriter out = res.getWriter();
-        File pdfFolder =  new File(req.getSession().getServletContext().getRealPath("/packages/30355"));
+        PrintWriter out = response.getWriter();
+        File pdfFolder =  new File(request.getSession().getServletContext().getRealPath("/packages/30355"));
 
         for (File pdf : pdfFolder.listFiles()) { // Line 27
             out.println(pdf.getName());
