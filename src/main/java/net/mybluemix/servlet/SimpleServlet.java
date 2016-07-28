@@ -30,9 +30,9 @@ public class SimpleServlet extends HttpServlet {
         File pdfFolder =  new File(request.getSession().getServletContext().getRealPath("/packages/30355"));
 
         
-            out.println(pdfFolder);
+            out.print(pdfFolder);
         }
-    } catch (IOException e) {
+     catch (IOException e) {
         
     
     	
