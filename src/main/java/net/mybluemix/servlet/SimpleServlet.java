@@ -27,10 +27,13 @@ public class SimpleServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
 
         PrintWriter out = response.getWriter();
-        File pdfFolder =  new File(request.getSession().getServletContext().getRealPath("/packages/30355"));
+        File pdfFolder =  new File(request.getSession().getServletContext().getRealPath("/packages"));
 
-        
-            out.print(pdfFolder);
+        	for (File pdf : pdfFolder.listFiles()) { // Line 27
+        	
+            out.print("hellooo"+pdf.getName());
+        }
+            
         }
      catch (IOException e) {
         
