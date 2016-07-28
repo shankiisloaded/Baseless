@@ -14856,8 +14856,10 @@ function ZeroPadNumber ( nValue )
                  myFunction(myArr);
             }
         };
+        xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         xmlhttp.open("GET", "SimpleServlet", true);
         xmlhttp.send();
+     
     }
 } 
 function myFunction(arr) {
