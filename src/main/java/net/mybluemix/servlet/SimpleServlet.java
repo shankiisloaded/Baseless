@@ -29,10 +29,9 @@ public class SimpleServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         File pdfFolder =  new File(request.getSession().getServletContext().getRealPath("/packages"));
 
-        	for (File pdf : pdfFolder.listFiles()) { // Line 27
-        	
+        	        	
             out.print("hellooo"+pdf.getName());
-        }
+       
             
         }
      catch (IOException e) {
